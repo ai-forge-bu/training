@@ -3,8 +3,8 @@
 ## For Windows
 
 ### Download and Install
-1. Visit https://code.visualstudio.com/
-2. Click the **Download for Windows** button
+1. Visit https://code.visualstudio.com/Download
+2. Click the **⤓ Windows** button
 3. Run the downloaded installer (`VSCodeUserSetup-{version}.exe`)
 4. Follow the installation wizard:
    - Accept the license agreement
@@ -24,8 +24,8 @@
 ## For macOS
 
 ### Download and Install
-1. Visit https://code.visualstudio.com/
-2. Click the **Download for Mac** button
+1. Visit https://code.visualstudio.com/Download
+2. Click the **⤓ Mac** button
 3. Open the downloaded `.zip` file
 4. Drag **Visual Studio Code.app** to your **Applications** folder
 5. Launch VS Code from Applications
