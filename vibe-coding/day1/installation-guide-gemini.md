@@ -130,7 +130,7 @@ This automatically handles dependencies including Node.js. Skip to Step 4: Authe
    npm --version
    ```
 
-3. **Install Gemini CLI:**
+3. **Install the Gemini CLI package:**
    ```bash
    npm install -g @google/gemini-cli
    ```
