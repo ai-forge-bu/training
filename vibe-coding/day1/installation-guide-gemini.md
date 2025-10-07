@@ -7,7 +7,7 @@
 ## For Windows
 
 ### Step 1: Install Node.js (if not already installed)
-1. Visit https://nodejs.org/
+1. Visit https://nodejs.org/en/download/
 2. Download the **LTS (Long Term Support)** version (Node.js 20 or higher required)
 3. Run the installer and follow the wizard (use default settings)
 4. Verify installation:
@@ -120,7 +120,7 @@ This automatically handles dependencies including Node.js. Skip to Step 4: Authe
    ```
 
    Or download from website:
-   - Visit https://nodejs.org/
+   - Visit https://nodejs.org/en/download/
    - Download the **LTS** version (Node.js 20 or higher required)
    - Run the installer
 
@@ -196,8 +196,9 @@ If you prefer using an API key instead:
 
 ### Test in VS Code
 1. Open VS Code
-2. Open the integrated terminal: `View > Terminal` (or `Ctrl+`` / `Cmd+``)
-3. Run the same test:
+2. Click `File > Open Folder` and select an empty folder
+3. Open the integrated terminal: `View > Terminal` (or `Ctrl+`` / `Cmd+``)
+4. Run the same test:
    ```bash
    gemini
    ```
