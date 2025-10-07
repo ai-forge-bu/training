@@ -108,7 +108,7 @@ Follow the on-screen instructions. You may need to:
 brew install gemini-cli
 ```
 
-This automatically handles dependencies including Node.js. Skip to Step 3 (Authentication).
+This automatically handles dependencies including Node.js. Skip to Step 4: Authentication.
 
 **Option 2: Using npm**
 
