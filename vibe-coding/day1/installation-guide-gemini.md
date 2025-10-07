@@ -8,11 +8,11 @@
 
 ### Step 1: Install Node.js (if not already installed)
 1. Visit https://nodejs.org/
-2. Download the **LTS (Long Term Support)** version
+2. Download the **LTS (Long Term Support)** version (Node.js 20 or higher required)
 3. Run the installer and follow the wizard (use default settings)
 4. Verify installation:
    - Open Command Prompt
-   - Type: `node --version`
+   - Type: `node --version` (should show v20.x.x or higher)
    - Type: `npm --version`
 
 ### Step 2: Set Execution Policy
@@ -35,7 +35,7 @@ Before installing Gemini CLI, you need to allow script execution:
 1. Open Command Prompt or PowerShell (doesn't need to be admin)
 2. Run:
    ```bash
-   npm install -g @google/generative-ai-cli
+   npm install -g @google/gemini-cli
    ```
 3. Wait for installation to complete
 
@@ -44,7 +44,25 @@ Before installing Gemini CLI, you need to allow script execution:
 gemini --version
 ```
 
-### Step 5: Set Up API Key
+### Step 5: Authentication
+
+**Option 1: Login with Google (Recommended)**
+
+This is the easiest method and gives you better rate limits (60 requests/min):
+
+1. Open Command Prompt or PowerShell
+2. Run:
+   ```bash
+   gemini
+   ```
+3. When prompted, choose **"Login with Google"**
+4. Follow the browser prompts to sign in with your Google account
+5. Done! You're authenticated and ready to use Gemini
+
+**Option 2: Use API Key (Alternative)**
+
+If you prefer using an API key instead:
+
 1. Go to https://aistudio.google.com/app/apikey
 2. Sign in with your Google account
 3. Click **Create API Key**
@@ -59,36 +77,88 @@ gemini --version
    - Click **OK** to save
    - **Restart Command Prompt/PowerShell** for changes to take effect
 
+   Note: API key has lower rate limits (100 requests/day)
+
 ## For macOS
 
-### Step 1: Install Node.js (if not already installed)
-1. **Using Homebrew (Recommended):**
+### Step 1: Install Homebrew (if not already installed)
+
+Homebrew is a package manager for macOS that makes installing developer tools easy.
+
+**Check if you have Homebrew:**
+```bash
+brew --version
+```
+
+**If you don't have Homebrew, install it:**
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Follow the on-screen instructions. You may need to:
+- Enter your Mac password
+- Press Enter to continue
+- Follow any additional setup commands shown at the end
+
+### Step 2: Install Gemini CLI
+
+**Option 1: Using Homebrew (Easiest - Recommended)**
+
+```bash
+brew install gemini-cli
+```
+
+This automatically handles dependencies including Node.js. Skip to Step 3 (Authentication).
+
+**Option 2: Using npm**
+
+1. **Install Node.js first (if not already installed):**
+
+   Using Homebrew:
    ```bash
    brew install node
    ```
 
-2. **Or download from website:**
+   Or download from website:
    - Visit https://nodejs.org/
-   - Download the **LTS** version
+   - Download the **LTS** version (Node.js 20 or higher required)
    - Run the installer
 
-3. Verify installation:
+2. **Verify Node.js installation:**
    ```bash
-   node --version
+   node --version  # Should show v20.x.x or higher
    npm --version
    ```
 
-### Step 2: Install Google Gemini CLI
-```bash
-npm install -g @google/generative-ai-cli
-```
+3. **Install Gemini CLI:**
+   ```bash
+   npm install -g @google/gemini-cli
+   ```
 
 ### Step 3: Verify Installation
 ```bash
 gemini --version
 ```
 
-### Step 4: Set Up API Key
+### Step 4: Authentication
+
+**Option 1: Login with Google (Recommended)**
+
+This is the easiest method and gives you better rate limits (60 requests/min):
+
+1. Open Terminal
+2. Run:
+   ```bash
+   gemini
+   ```
+3. When prompted, choose **"Login with Google"**
+4. Follow the browser prompts to sign in with your Google account
+5. Done! You're authenticated and ready to use Gemini
+
+**Option 2: Use API Key (Alternative)**
+
+If you prefer using an API key instead:
+
 1. Go to https://aistudio.google.com/app/apikey
 2. Sign in with your Google account
 3. Click **Create API Key**
@@ -110,15 +180,17 @@ gemini --version
 
    Replace `your-api-key-here` with your actual API key.
 
+   Note: API key has lower rate limits (100 requests/day)
+
 ## Test Your Setup
 
 ### Test in Terminal
 1. Open a **new** terminal/command prompt window
 2. Run:
    ```bash
-   gemini chat
+   gemini
    ```
-3. You should see a chat interface
+3. You should see the Gemini CLI interface
 4. Type a test message like "Hello, can you help me code?"
 5. Press `Ctrl+C` to exit
 
@@ -127,7 +199,7 @@ gemini --version
 2. Open the integrated terminal: `View > Terminal` (or `Ctrl+`` / `Cmd+``)
 3. Run the same test:
    ```bash
-   gemini chat
+   gemini
    ```
 
 ## Troubleshooting
@@ -141,8 +213,8 @@ Add the returned path + `\node_modules\.bin` to your PATH environment variable.
 
 **Solution 2: Reinstall**
 ```bash
-npm uninstall -g @google/generative-ai-cli
-npm install -g @google/generative-ai-cli
+npm uninstall -g @google/gemini-cli
+npm install -g @google/gemini-cli
 ```
 
 ### Windows: "Execution Policy" Error
@@ -181,14 +253,20 @@ Free tier has usage limits. If you hit them:
 
 ### Basic Commands
 ```bash
-# Start interactive chat
-gemini chat
+# Start interactive session (default)
+gemini
 
-# Ask a one-time question
-gemini ask "How do I create a React component?"
+# Start in a specific directory
+gemini /path/to/your/project
 
-# Generate code
-gemini code "Create a Python function to sort a list"
+# Ask a non-interactive question
+gemini -p "How do I create a React component?"
+
+# Use a specific model
+gemini -m gemini-2.0-flash
+
+# Include specific directories
+gemini --include-directories ../lib,../docs
 ```
 
 ### Best Practices
