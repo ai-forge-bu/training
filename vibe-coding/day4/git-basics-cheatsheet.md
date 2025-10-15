@@ -2,6 +2,33 @@
 
 Quick reference for the Git commands you'll need on Day 4.
 
+## Git Commands Reference Table
+
+| Command | What It Does | When To Use It | Safety |
+|---------|-------------|----------------|---------|
+| `git status` | Shows which files you changed | Before adding/committing to see what's different | 🟢 Safe |
+| `git add .` | Prepares ALL changed files to save | When you want to save everything you worked on | 🟢 Safe |
+| `git add filename.txt` | Prepares ONE specific file to save | When you only want to save certain files | 🟢 Safe |
+| `git commit -m "message"` | Saves your changes with a description | After git add, to create a save point | 🟢 Safe |
+| `git push` | Uploads your changes to GitHub | After committing, to backup to cloud | 🟢 Safe |
+| `git pull` | Downloads latest changes from GitHub | Before starting work, to get updates | 🟢 Safe |
+| `git init` | Turns folder into a Git project | Once, when starting a new project | 🟢 Safe |
+| `git clone [url]` | Downloads a project from GitHub | When you want to work on someone's project | 🟢 Safe |
+| `git log` | Shows history of all your saves | When you want to see past commits | 🟢 Safe |
+| `git diff` | Shows exactly what changed line by line | To see details of your changes | 🟢 Safe |
+| `git remote add origin [url]` | Connects your project to GitHub | Once, after git init, to link to GitHub | 🟡 Careful |
+| `git remote -v` | Shows which GitHub repo you're connected to | To verify you're pushing to the right place | 🟢 Safe |
+| `git checkout filename.txt` | Undo changes to ONE file | When you want to discard changes to a file | 🟡 Careful |
+| `git checkout .` | Undo ALL your unsaved changes | When you want to start over | 🟡 Careful |
+| `git commit --amend` | Change your last commit message | When you made a typo in commit message | 🟡 Careful |
+| `git push --force` | Force your version to overwrite GitHub | ⛔ Proceed with caution | 🔴 Dangerous |
+
+### Safety Legen
+- 🟢 **Safe** - Use anytime, won't break anything
+- 🟡 **Careful** - Double-check before using, can lose unsaved work
+- 🔴 **Dangerous** - Can cause problems, always ask for help first
+
+
 ---
 
 ## Essential Workflow
